@@ -1,0 +1,119 @@
+body {
+  margin: 0px;
+  padding: 0;
+  min-width: 960px; }
+
+* {
+  box-sizing: border-box; }
+
+.content-field {
+  height: 100%;
+  background: #eee;
+  width: 100%;
+  max-width: 960px;
+  margin: auto;
+  padding: 8px; }
+  @media screen and (max-width: 480px) {
+    .content-field {
+      background: #ff0; }
+      .content-field .name {
+        color: #f00; } }
+  .content-field.no-pad {
+    padding: 0; }
+  .content-field.flex {
+    display: flex; }
+  @media screen and (max-width: 960px) {
+    .content-field {
+      background: #f0f; } }
+  @media screen and (max-width: 480px) {
+    .content-field {
+      background: #f00; } }
+
+@media screen and (max-width: 1280px) and (min-width: 721px) {
+  .content-field {
+    background: #f00; } }
+
+@media screen and (max-width: 720px) {
+  .content-field {
+    background: #f0f; } }
+
+.nav-field {
+  height: 50px; }
+
+.user-field {
+  height: 250px; }
+  .user-field .content-field .user-image {
+    width: 200px;
+    heihgt: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .user-field .content-field .user-image .image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: #f00; }
+  .user-field .content-field .user-info {
+    width: 400px;
+    heihgt: 100%; }
+    .user-field .content-field .user-info .name {
+      font-size: 1px;
+      transform: scale(0.5);
+      transform-origin: 0% 50%;
+      height: 50px; }
+    .user-field .content-field .user-info .desc {
+      display: flex;
+      align-items: center;
+      height: 80px; }
+    .user-field .content-field .user-info .count-zone {
+      display: flex;
+      height: 104px;
+      padding: 16px 0; }
+      .user-field .content-field .user-info .count-zone .numbers .big-number {
+        height: 50px;
+        font-size: 32px;
+        line-height: 50px; }
+
+.menu-field {
+  height: 50px; }
+
+.card-field {
+  height: calc(100vh - 350px);
+  overflow: scroll; }
+
+input {
+  width: 300px;
+  height: 32px;
+  border: solid 1px #aaa;
+  outline: none; }
+  input::placeholder {
+    font-size: 12px;
+    font-style: italic;
+    color: #f00; }
+
+.card-wrapper {
+  padding: 4px;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% / 3);
+  height: calc(960px / 3);
+  border: solid 1px #aaa; }
+  .card-wrapper .card {
+    background-size: cover !important;
+    background-position: center !important;
+    background: #000;
+    height: 100%; }
+
+.nav-field .icon {
+  width: 50px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center; }
+
+.flex-empty {
+  flex: 1; }
+
+.flex-auto {
+  width: auto; }
+
+/*# sourceMappingURL=style.css.map */

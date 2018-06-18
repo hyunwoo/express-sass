@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  .nav-field
+    .content-field.flex
+      .flex-auto.icon
+        i.fab.fa-instagram
+      .flex-auto Instagram
+      .flex-empty
+      .flex-auto
+        input(placeholder="SEARCH", type="color")
+      .flex-empty
+      .flex-auto.icon
+        i.far.fa-compass
+      .flex-auto.icon
+        i.far.fa-heart
+      .flex-auto.icon
+        i.fa.fa-user
+
+  .user-field
+    .content-field.flex
+      .user-image
+        .image
+      .user-info
+        .name 여기는 사람이름이 들어가요
+        .desc.
+          여기에 설명이 들어간데요.... 휴..... 기분이 좋지 아니하다...
+          여기에 설명이 들어간데요.... 휴..... 기분이 좋지 아니하다...
+        .count-zone
+          .flex-empty.numbers
+            .big-number 1,190
+            .small-number posts
+          .flex-empty.numbers
+            .big-number 1,190
+            .small-number posts
+          .flex-empty.numbers
+            .big-number 1,190
+            .small-number posts
+      .flex-empty
+  .menu-field
+    .content-field
+  .card-field
+    .content-field.no-pad
+      -for(var i = 0 ; i < 24 ; i ++){
+      .card-wrapper
+        .card(style='background:url(/images/' + i +  '.png)')
+      -}
+
+
+
+
+
+
+
+

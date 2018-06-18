@@ -1,0 +1,59 @@
+$nav-height: 50px
+
+@mixin backgroundImage($url)
+  background: url($url)
+  background-size: cover
+
+
+@mixin small-button
+  width: 32px
+  height: 32px
+  border-radius: 50%
+  border: solid 1px #f00
+
+
+@mixin radial-button
+  border-radius: 50%
+  text-align: center
+
+
+
+
+@mixin inline-block
+  display: inline-block
+  vertical-align: top
+
+
+// 2
+@mixin view-mobile
+  @media screen and (max-width: 480px)
+    @content
+
+@mixin view-tablet
+  @media screen and (max-width: 960px)
+    @content
+
+@mixin view-sScreen
+  @media screen and (max-width: 1280px)
+    @content
+
+@mixin view-lScreen
+  @media screen and (max-width: 1920px)
+    @content
+
+
+.menu-zone
+  .user-zone
+  .login-zone
+
+  &.small
+    .user-zone
+    .login-zone
+
+  &.big
+    .user-zone
+    .login-zone
+
+
+
+

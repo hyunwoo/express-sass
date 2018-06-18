@@ -1,0 +1,133 @@
+@import "global"
+
+body
+  margin: 0px
+  padding: 0
+  min-width: 960px
+
+*
+  box-sizing: border-box
+
+$nav-height: 50px
+
+
+.name
+  color : $main-font-color
+  background : $main-background-color
+
+.content-field
+  @include view-mobile
+    background: #ff0
+    .name
+      color: #f00
+
+  height: 100%
+  background: #eee
+  width: 100%
+  max-width: 960px
+  margin: auto
+  padding: 8px
+  &.no-pad
+    padding: 0
+  &.flex
+    display: flex
+
+  // 3
+  @include view-tablet
+    background: #f0f
+
+  @include view-mobile
+    background: #f00
+
+// 1.
+@media screen and (max-width: 1280px) and (min-width: 721px)
+  .content-field
+    background: #f00
+
+@media screen and (max-width: 720px)
+  .content-field
+    background: #f0f
+
+.nav-field
+  height: $nav-height
+
+.user-field
+  height: 250px
+  .content-field
+    .user-image
+      width: 200px
+      heihgt: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      .image
+        width: 150px
+        height: 150px
+        border-radius: 50%
+        background: #f00
+    .user-info
+      width: 400px
+      heihgt: 100%
+      .name
+        font-size: 1px
+        transform: scale(0.5)
+        transform-origin: 0% 50%
+        height: 50px
+      .desc
+        display: flex
+        align-items: center
+        height: 80px
+      .count-zone
+        display: flex
+        $count-zone-height: 250px - 16px -50px -80px
+        height: $count-zone-height
+        padding: 16px 0
+        .numbers
+          .big-number
+            height: 50px
+            font-size: 32px
+            line-height: 50px
+          .small-number
+
+.menu-field
+  height: 50px
+
+.card-field
+  height: calc(100vh - 350px)
+  overflow: scroll
+
+input
+  width: 300px
+  height: 32px
+  border: solid 1px #aaa
+  outline: none
+  &::placeholder
+    font-size: 12px
+    font-style: italic
+    color: #f00
+
+.card-wrapper
+  padding: 4px
+  display: inline-block
+  vertical-align: top
+  width: calc(100% / 3)
+  height: calc(960px / 3)
+  border: solid 1px #aaa
+  .card
+    background-size: cover !important
+    background-position: center !important
+    background: #000
+    height: 100%
+
+.nav-field
+  .icon
+    width: 50px
+    height: 50px - 16px
+    line-height: 50px - 16px
+    text-align: center
+
+.flex-empty
+  flex: 1
+
+.flex-auto
+  width: auto
