@@ -26,4 +26,8 @@ router.get('/board', function (req, res, next) {
     res.render('board');
 });
 
+router.get('/fractal', function (req, res, next) {
+    res.render('fractal');
+});
+
 module.exports = router;
