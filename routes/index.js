@@ -30,4 +30,9 @@ router.get('/fractal', function (req, res, next) {
     res.render('fractal');
 });
 
+
+router.get('/particle', function (req, res, next) {
+    res.render('particle');
+});
+
 module.exports = router;

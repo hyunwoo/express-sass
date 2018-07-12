@@ -1,8 +1,12 @@
 const fractalGenerator = new function() {
-
     let generateData = {};
+    let lineData = [];
 
-    const drawLineByAngle = (x1, y1, degree,  depth) => {
+    this.getLineData = () => {
+        return lineData;
+    };
+
+    const drawLineByAngle = (x1, y1, degree, depth) => {
         const length = Math.pow(generateData.childBranchLengthRatio, depth)
             * generateData.initialBranchLength;
 
@@ -11,13 +15,21 @@ const fractalGenerator = new function() {
         const x2 = Math.cos(radian) * length + x1;
         const y2 = Math.sin(radian) * length + y1;
 
-        const c = lerpHexColor( depth / generateData.depthCount);
-        stroke(c.r, c.g, c.b, 255 - depth / generateData.depthCount * 255);
-        line(x1, y1, x2, y2);
+        const c = lerpHexColor(depth / generateData.depthCount);
+
+        lineData.push({
+            depth,
+            x1,
+            y1,
+            x2,
+            y2,
+            c,
+            opacity: 255 - depth / generateData.depthCount * 255,
+        });
+
 
         let startAngle = -(generateData.childBranchCount - 1)
             * generateData.childBranchAngle / 2 + degree * 1;
-
 
         for (let i = 0; i < generateData.childBranchCount; i++) {
             drawLineByAngle(x2, y2, startAngle, depth + 1);
@@ -41,8 +53,9 @@ const fractalGenerator = new function() {
             b,
         }
     };
-    this.generate = (data) => {
 
+    this.generate = (data) => {
+        lineData = [];
         generateData = data;
         blendMode(BLEND);
         background(0);
@@ -57,8 +70,64 @@ const fractalGenerator = new function() {
             currentAngle += dAngle;
         }
 
-
+        console.log(lineData);
         // drawLine(0, 0, 500, 500, '#ff0000');
-    }
+    };
 
+
+    let tick = 0;
+    let isPause = false;
+    this.play = () => {
+        tick = 0;
+
+    };
+
+    this.pause = () => {
+        isPause = !isPause;
+    };
+
+    this.update = () =>{
+        if(isPause) return;
+        tick ++;
+        const depth = Math.floor(tick / 100) + 1;
+        drawLineData(getLineDataByDepth(depth), 0.01);
+    };
+
+    function drawLineData(datas, opacity){
+        _.forEach(datas, d => {
+            stroke(d.c.r,
+                d.c.g,
+                d.c.b,
+                d.opacity * opacity);
+
+            line(d.x1,
+                d.y1,
+                d.x2,
+                d.y2);
+        });
+
+    }
+    function getLineDataByDepth(depth){
+        return _.filter(lineData, d => d.depth === depth);
+    }
 };
+
+let mic;
+function setup() {
+    const $root = $('body');
+    console.log($root.width(), $root.height());
+    const canvas = createCanvas($root.width(), $root.height());
+    canvas.parent('renderer');
+    console.log(canvas);
+    background(0);
+
+    mic = new p5.AudioIn();
+    mic.start();
+}
+
+
+function draw() {
+    fractalGenerator.update();
+    console.log(mic.getLevel());
+
+}

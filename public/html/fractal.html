@@ -1,0 +1,31 @@
+<html>
+
+<head>
+	<script src="/javascripts/p5.js"></script>
+	<script src="/javascripts/addons/p5.dom.min.js"></script>
+	<script src="/javascripts/addons/p5.sound.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link href="/stylesheets/fractal.css" rel="stylesheet" />
+</head>
+
+<body>
+<div id="renderer"></div>
+<div class="ui">
+	<div class="input-text">start branch count</div><input type="range" min="2" max="10" step="1" name="startBranchCount" />
+	<div class="input-text">child branch count</div><input type="range" min="2" max="8" step="1" name="childBranchCount" />
+	<div class="input-text">child branch angle</div><input type="range" min="0" max="50" step="1" name="childBranchAngle" />
+	<div class="input-text">depth count</div><input type="range" min="2" max="10" step="1" name="depthCount" />
+	<div class="input-text">initial branch length</div><input type="range" min="0" max="200" step="0.01" name="initialBranchLength" />
+	<div class="input-text">child branch length ratio</div><input type="range" min="0" max="2" step="0.01" name="childBranchLengthRatio" />
+	<div class="input-text">start color</div><input type="color" name="startColor" value="#ff0000" />
+	<div class="input-text">end color</div><input type="color" name="endColor" value="#fad022" />
+	<div class="button" id="exec">EXEC</div>
+	<div class="button" id="play">PLAY</div>
+	<div class="button" id="pause">PAUSE</div>
+</div>
+<script src="/javascripts/fractal.generator.js"></script>
+<script src="/javascripts/fractal.ui.js"></script>
+</body>
+
+</html>

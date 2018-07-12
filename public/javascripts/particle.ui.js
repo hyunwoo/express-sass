@@ -11,13 +11,11 @@ $('#exec').on('click', () => {
         const v = $input.val();
         data[ k ] = v;
     }
-
-    fractalGenerator.generate(data);
-
+    particleGenerate.generate(data);
 });
 
 
-$('#play').on('click', fractalGenerator.play);
-$('#pause').on('click', fractalGenerator.pause);
+// $('#play').on('click', fractalGenerator.play);
+// $('#pause').on('click', fractalGenerator.pause);
 
 
