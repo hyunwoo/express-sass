@@ -1,0 +1,45 @@
+body, html {
+  margin: 0;
+  padding: 0; }
+
+* {
+  box-sizing: border-box; }
+
+h1 {
+  height: 300px; }
+
+.grid {
+  height: auto;
+  width: 100%; }
+  .grid .cell {
+    display: inline-block;
+    width: calc(100% /3);
+    background: #eee;
+    border: solid 1px #ccc;
+    vertical-align: top; }
+    .grid .cell .image-group {
+      height: 200px;
+      background: #333;
+      color: #fff;
+      position: relative; }
+      .grid .cell .image-group .title {
+        padding: 24px;
+        font-size: 20px; }
+      .grid .cell .image-group .tags {
+        position: absolute;
+        bottom: 0;
+        left: 0; }
+        .grid .cell .image-group .tags .tag {
+          border: solid 1px #fff;
+          height: 32px;
+          line-height: 32px;
+          border-radius: 16px;
+          padding: 0 12px;
+          text-align: center;
+          display: inline-block;
+          vertical-align: top;
+          margin: 6px; }
+    .grid .cell .text-group {
+      padding: 12px; }
+
+/*# sourceMappingURL=data.filter.raw.css.map */

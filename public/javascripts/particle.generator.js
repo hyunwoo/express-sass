@@ -87,11 +87,17 @@ function setup() {
     console.log(canvas);
     background(0);
 
+    const $ele = $('#id');
+
     mic = new p5.AudioIn();
     mic.start();
+
+
 }
 
 
 function draw() {
     particleGenerate.update(mic.getLevel());
+
+
 }

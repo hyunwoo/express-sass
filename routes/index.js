@@ -26,6 +26,10 @@ router.get('/board', function (req, res, next) {
     res.render('board');
 });
 
+router.get('/three', function (req, res, next) {
+    res.render('three');
+});
+
 router.get('/fractal', function (req, res, next) {
     res.render('fractal');
 });
@@ -33,6 +37,10 @@ router.get('/fractal', function (req, res, next) {
 
 router.get('/particle', function (req, res, next) {
     res.render('particle');
+});
+
+router.get('/dataviewer', function (req, res, next) {
+    res.render('dataviewer');
 });
 
 module.exports = router;
